@@ -1,5 +1,5 @@
 # Dev-Soc-AI-Hackathon
-Using AI to solve problems, not just a Chat Box
+Using AI to solve problems, not just a Chat Bot
 
 AI Hackathon Idea AI Solution for Start-Up to Major Factory Operations and Trade
 Management
