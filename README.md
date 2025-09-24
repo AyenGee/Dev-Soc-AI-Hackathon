@@ -1,7 +1,7 @@
 # Dev-Soc-AI-Hackathon
 Using AI to solve problems, not just a Chat Box
 
-George Ayensu AI Hackathon Idea AI Solution for Start-Up to Major Factory Operations and Trade
+AI Hackathon Idea AI Solution for Start-Up to Major Factory Operations and Trade
 Management
  Problem: Inefficient Operations, Inventory, and Trade Management in Start-Up
 Factories
