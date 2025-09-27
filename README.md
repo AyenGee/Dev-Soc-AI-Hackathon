@@ -1,42 +1,98 @@
-# Dev-Soc-AI-Hackathon
-Using AI to solve problems, not just a Chat Bot
+# News Digest Tool
 
-AI Hackathon Idea AI Solution for Start-Up to Major Factory Operations and Trade
-Management
- Problem: Inefficient Operations, Inventory, and Trade Management in Start-Up
-Factories
-Key Challenges: - Inventory management: Stockouts or overstock due to poor visibility of raw materials
-and finished goods. - Supply chain timing: Uncertainty about when to buy raw materials and when to ship
-finished products abroad. - Production planning: Aligning production rates with export demand to avoid
-delays or waste. - Profit optimization: Buying and selling at suboptimal times due to currency fluctuations
-or market price changes. - Alerts and decision support: Lack of timely notifications for critical operational
-events.
- AI Solution: Integrated Factory Operations & Trade Intelligence Platform
-1. Core Modules:
-Inventory Management AI: - Predicts stock depletion based on production rate and export commitments.
-- Sends early notifications when materials or products are running low. - Suggests optimal reorder points to
-prevent stockouts or overstock.
-Trade & Market Intelligence AI: - Monitors global commodity prices, exchange rates, shipping costs, and
-demand trends. - Recommends best times to buy raw materials or export goods. - Optimizes pricing
-strategies for international markets.
-Production & Capacity Planning AI: - Aligns production schedules with current inventory, incoming orders,
-and market demand. - Detects bottlenecks and suggests adjustments in production rate. - Forecasts
-resource needs (raw materials, labor, machinery) for optimal efficiency.
-Alerts & Decision Support: - Sends real-time notifications via dashboard, SMS, or email: - Stock running low
-- Exchange rate spikes affecting export profit - Production bottlenecks - Urgent logistics or shipment delays
-2. AI Techniques Used: - Time-Series Forecasting: Predict commodity prices, exchange rates, inventory
-depletion. - Reinforcement Learning: Optimize trade and production decisions over time. - Optimization
-Algorithms: Suggest reorder quantities, production schedules, and shipping plans. - Predictive Analytics:
-Estimate future demand based on past exports and market trends. - Anomaly Detection: Flag unusual
-drops in inventory or unexpected supply chain delays.
- Expected Impact
-• Reduce stockouts and overstocking → better cash flow and less waste.
-1
-Maximize profits → optimal buying, selling, and pricing decisions.
-Improve production efficiency → smooth alignment with demand and inventory.
-Minimize operational risk → timely alerts about shortages, delays, or market changes.
-Support scalability → start-up factories can expand without hiring a large operations team.
-Summary: This AI system acts as a central brain for start-up factories, managing inventory, production,
-trade, and exports. It predicts shortages, recommends trade actions, optimizes production, and provides
-real-time alerts — turning complex operational decisions into data-driven, automated insights.
+A Node.js application that fetches news articles from South African news feeds, summarizes them using OpenAI's GPT-4, and displays them in a beautiful HTML interface.
 
+## Features
+
+- 📰 Fetches latest articles from multiple SA news sources
+- 🤖 AI-powered article summarization using OpenAI GPT-4
+- 🌐 Beautiful HTML web interface
+- 📱 Responsive design for mobile and desktop
+- 🚀 Built-in web server
+- 📝 Tracks seen articles to avoid duplicates
+
+## News Sources
+
+- MyBroadband
+- Mail & Guardian
+- Daily Maverick
+- IOL News
+- TechCentral
+
+## Setup
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Create a `.env` file with your OpenAI API key:
+```
+OPENAI_API_KEY=your_openai_api_key_here
+RESEND_API_KEY=your_resend_api_key_here  # Optional, for email functionality
+```
+
+3. Run the application:
+```bash
+node script.js
+```
+
+## Usage
+
+1. Run the script to fetch and summarize news articles
+2. The application will automatically start a web server on `http://localhost:3000`
+3. Open your browser and navigate to `http://localhost:3000` to view the news digest
+4. The HTML file is also saved as `news-digest.html` in the project directory
+
+## Features
+
+### Web Interface
+- Clean, modern design with gradient background
+- Responsive grid layout for article cards
+- Hover effects and smooth transitions
+- Mobile-friendly design
+
+### Article Display
+- Article titles and summaries
+- Key facts extracted by AI
+- Direct links to full articles
+- Source attribution
+
+### Server
+- Built-in HTTP server
+- Serves the news digest HTML page
+- Graceful shutdown with Ctrl+C
+
+## File Structure
+
+```
+news-tool-main/
+├── script.js          # Main application file
+├── package.json       # Dependencies and project info
+├── seen.json         # Tracks processed articles
+├── news-digest.html  # Generated HTML output (auto-created)
+└── README.md         # This file
+```
+
+## Dependencies
+
+- `openai` - AI summarization
+- `fast-xml-parser` - RSS feed parsing
+- `cheerio` - HTML parsing and content extraction
+- `resend` - Email functionality (optional)
+- `dotenv` - Environment variable management
+
+## Customization
+
+You can easily customize:
+- News sources by modifying the `FEEDS` array
+- Styling by editing the CSS in the `buildHtmlPage` function
+- Server port by changing the default in `startWebServer()`
+- Article limit by modifying the slice in `getArticlesFromFeed()`
+
+## Notes
+
+- The application tracks seen articles in `seen.json` to avoid reprocessing
+- Email functionality is commented out by default but can be re-enabled
+- The web server runs continuously until stopped with Ctrl+C
+- Articles are limited to the latest from each feed to manage processing time
